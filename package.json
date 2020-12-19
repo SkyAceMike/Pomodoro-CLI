@@ -1,0 +1,32 @@
+{
+  "name": "skyacemike-pomodoro-cli",
+  "version": "1.0.0",
+  "description": "A Pomodoro Timer with a CLI",
+  "main": "pomodoro-cli.js",
+  "scripts": {
+    "start": "node pomodoro-cli.js"
+  },
+  "bin": {
+    "pomodoro-cli": "./bin/pomodoro-cli"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "cli-progress": "^3.8.2",
+    "commander": "^6.2.1"
+  },
+  "author": "skyacemike",
+  "license": "MIT",
+  "homepage": "https://github.com/SkyAceMike/Pomodoro-CLI",
+  "bugs": {
+    "url": "https://github.com/SkyAceMike/Pomodoro-CLI/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SkyAceMike/Pomodoro-CLI.git"
+  },
+  "keywords": [
+    "pomodoro",
+    "cli",
+    "timer"
+  ]
+}
