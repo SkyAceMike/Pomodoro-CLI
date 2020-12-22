@@ -59,7 +59,7 @@ const START_TIMER_INDEX = 0;
 // ---------- GLOBAL VARIABLES ----------
 
 // Input variables from the CLI to be collected
-let focusDuration, shortBreakDuration, longBreakDuration, phasesTotal;
+let focusDuration, shortBreakDuration, longBreakDuration, phasesTotal, customSize;
 
 // phaseInfo --> Processed phase type and duration
 let phaseInfo;
@@ -109,6 +109,7 @@ program
   .option('-s, --short-break <int>', 'Short Break phase minutes', 5)
   .option('-l, --long-break <int>', 'Long Break phase minutes', 15)
   .option('-r, --rounds <int>', 'How many Focus rounds', 4)
+  .option('-w, --width <int>', 'Progress bar width', 30)
   .option('-d, --debug', '--- Output debugging code ---')
 
 program.parse(process.argv);
@@ -130,6 +131,7 @@ focusDuration = parseInt(program.focus);
 shortBreakDuration = parseInt(program.shortBreak);
 longBreakDuration = parseInt(program.longBreak);
 phasesTotal = parseInt(program.rounds) * 2;
+customSize = parseInt(program.width);
 
 
 
@@ -166,7 +168,7 @@ phaseInfo.push([PHASE_TYPE.LONG_BREAK, longBreakDuration]);
 // Setup multi progress bar container
 multibar = new cliProgress.MultiBar({
   format: PROGRESS_BAR.FORMAT,
-  barsize: PROGRESS_BAR.SIZE,
+  barsize: customSize || PROGRESS_BAR.SIZE,
   // barCompleteChar: '\u2588',
   // barIncompleteChar: '\u2591',
   // barGlue: "",
