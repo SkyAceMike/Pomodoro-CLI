@@ -1,4 +1,4 @@
-# Image Similarity Searcher (Backend)
+# Pomodoro-CLI
 
 
 ![Pomodoro default Image](./Examples/pomodoro-cli_example_default.jpg)
